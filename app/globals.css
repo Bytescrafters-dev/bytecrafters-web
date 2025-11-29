@@ -69,3 +69,7 @@
 html {
   scroll-behavior: smooth;
 }
+
+.min-page-screen {
+  min-height: calc(100vh - 330px);
+}

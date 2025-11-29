@@ -16,12 +16,12 @@ const Navbar = () => {
             height={70}
             className="cursor-pointer hover:animate-slowspin"
           />
-          <span className="handjet font-bold ml-4 text-6xl hidden md:block text-gray-300 uppercase">
+          <span className="handjet font-bold ml-4 text-4xl xl:text-6xl block text-gray-300 uppercase">
             Bytescrafters
           </span>
         </a>
 
-        <div className="w-[500px] h-full flex flex-row items-center justify-between md:mr-20">
+        <div className="hidden xl:flex w-[500px] h-full flex-row items-center justify-between md:mr-20">
           <div className="flex items-center justify-between w-full h-auto border-gray-300">
             <a
               href="/about-us"

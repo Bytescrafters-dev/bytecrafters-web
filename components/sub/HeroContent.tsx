@@ -15,22 +15,22 @@ const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-row items-center justify-between px-20 mt-40 w-full z-20 gap-10"
+      className="flex flex-col xl:flex-row items-center justify-between px-10 xl:px-20 mt-28 xl:mt-40 w-full z-20 gap-10"
     >
       <div className="flex flex-col gap-5 justify-center text-start flex-1">
         <motion.div
           variants={slideInFromTop}
           className="Welcome-box py-[15px] px-1 border border-[#ffffff8b] opacity-[0.9] "
         >
-          <SparklesIcon className="text-white mr-2.5 h-7 w-7" />
-          <h1 className="welcome-text text-white text-xl">
+          <SparklesIcon className="text-white mr-2.5 h-4 xl:h-7 w-4 xl:w-7" />
+          <h1 className="welcome-text text-white text-md xl:text-xl">
             Bytescrafters Pty Ltd
           </h1>
         </motion.div>
 
         <motion.div
           variants={slideInFromLeft(0.5)}
-          className="flex flex-col gap-6 mt-6 text-7xl text-white  font-semibold w-auto h-auto"
+          className="flex flex-col gap-1 xl:gap-6 mt-2 xl:mt-6 text-3xl xl:text-7xl text-white  font-semibold w-auto h-auto"
         >
           <span>
             Where
@@ -39,13 +39,13 @@ const HeroContent = () => {
               Ideas{" "}
             </span>
           </span>
-          <span className="text-7xl">Become Premium,</span>
-          <span className="text-7xl">Intelligent Software</span>
+          <span className="text-3xl xl:text-7xl">Become Premium,</span>
+          <span className="text-3xl xl:text-7xl">Intelligent Software</span>
         </motion.div>
 
         <motion.p
           variants={slideInFromLeft(0.8)}
-          className="text-2xl text-gray-400 my-5 mr-20"
+          className="text-sm xl:text-2xl text-gray-400 my-5 mr-0 xl:mr-20"
         >
           We craft modern digital experiences — from websites and apps to
           automations and AI — built with premium quality and a friendly, human

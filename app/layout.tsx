@@ -21,6 +21,7 @@ export default function RootLayout({
       <link
         href="https://fonts.googleapis.com/css2?family=Handjet:wght@400;600;700&display=swap"
         rel="stylesheet"
+        precedence="default"
       />
       <body
         className={`${inter.className} bg-[#040402] overflow-y-scroll overflow-x-hidden`}

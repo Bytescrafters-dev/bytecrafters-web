@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white py-8">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-4 gap-8">
+        <div className="flex flex-col items-center xl:grid grid-cols-4 gap-8">
           <div>
             <Image
               src="/NavLogo.png"
@@ -15,14 +15,14 @@ const Footer = () => {
             />
           </div>
 
-          <div>
+          <div className="text-center xl:text-left">
             <h3 className="font-semibold mb-4">Contact</h3>
             <p className="text-sm mb-2">Info.bytecrafters@gmail.com</p>
             <p className="text-sm mb-2">+61 450 150 214</p>
             <p className="text-sm">26 Muyan cct Burwood Victoria 3125</p>
           </div>
 
-          <div>
+          <div className="text-center xl:text-left">
             <h3 className="font-semibold mb-4">Navigation</h3>
             <div className="flex flex-col space-y-2">
               <a href="#about" className="text-sm hover:text-orange-400">
@@ -40,7 +40,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div>
+          <div className="text-center xl:text-left">
             <h3 className="font-semibold mb-4">Follow Us</h3>
             <div className="flex flex-col space-y-2">
               <a href="#" className="text-sm hover:text-orange-400">

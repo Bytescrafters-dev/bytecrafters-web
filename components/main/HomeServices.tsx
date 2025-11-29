@@ -43,12 +43,14 @@ const HomeServices = () => {
 
   return (
     <div className="flex flex-col h-full text-white mx-auto w-3/4 py-16">
-      <h2 className="text-4xl font-semibold text-center mb-12">WHAT WE DO</h2>
-      <div className="grid grid-cols-3 gap-6">
+      <h2 className="text-3xl xl:text-4xl font-semibold text-center mb-12">
+        WHAT WE DO
+      </h2>
+      <div className="block xl:grid xl:grid-cols-3 xl:gap-6">
         {services.map((service, index) => (
           <div
             key={index}
-            className="p-6 rounded-xl bg-transparent border-2 border-orange-600 border-gradient-to-r from-orange-600 to-orange-100"
+            className="p-6 rounded-xl bg-transparent border-2 border-orange-600 border-gradient-to-r from-orange-600 to-orange-100 mb-4"
           >
             <h3 className="text-xl font-semibold mb-4 text-center">
               {service.title}
@@ -62,7 +64,7 @@ const HomeServices = () => {
                 className="filter brightness-0 invert"
               />
             </div>
-            <p className="text-gray-300">{service.description}</p>
+            <p className="text-gray-300 text-center">{service.description}</p>
           </div>
         ))}
       </div>

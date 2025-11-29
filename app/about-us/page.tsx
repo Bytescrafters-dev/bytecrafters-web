@@ -3,5 +3,5 @@ import HomeServices from "@/components/main/HomeServices";
 import Intro from "@/components/main/Intro";
 
 export default function AboutUs() {
-  return <main className="h-full w-full">about us</main>;
+  return <main className="h-full w-full mt-32">about us</main>;
 }

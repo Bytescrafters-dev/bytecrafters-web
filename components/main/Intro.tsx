@@ -2,12 +2,12 @@ import React from "react";
 
 const Intro = () => {
   return (
-    <div className="flex flex-col h-full text-white mx-auto w-3/4">
+    <div className="h-full text-white mx-auto w-3/4">
       <div className="w-full pt-12">
-        <div className="text-4xl font-semibold text-center mb-12">
+        <div className="text-3xl xl:text-4xl font-semibold text-center mb-12">
           WHO ARE WE
         </div>
-        <div className="mt-4 flex gap-8">
+        <div className="mt-4 flex flex-col md:flex-row gap-8">
           <div className="flex-1 text-justify">
             At Bytecrafters, we believe that great software should feel
             effortless — not just for the people who use it, but for the teams
