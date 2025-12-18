@@ -50,7 +50,11 @@ const HomeServices = () => {
         {services.map((service, index) => (
           <div
             key={index}
-            className="p-6 rounded-xl bg-transparent border-2 border-orange-600 border-gradient-to-r from-orange-600 to-orange-100 mb-4"
+            className="p-6 rounded-xl border-2 border-orange-600 mb-4 shadow-lg shadow-black/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/70"
+            style={{
+              background: 'linear-gradient(145deg, #2a2a2a, #1a1a1a)',
+              boxShadow: 'inset 2px 2px 5px rgba(255, 255, 255, 0.1), inset -2px -2px 5px rgba(0, 0, 0, 0.5), 0 8px 16px rgba(0, 0, 0, 0.3)'
+            }}
           >
             <h3 className="text-xl font-semibold mb-4 text-center">
               {service.title}

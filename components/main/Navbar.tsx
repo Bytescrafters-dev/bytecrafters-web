@@ -1,73 +1,109 @@
 "use client";
-import Image from "next/image";
-import React from "react";
+
+import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { FiX } from "react-icons/fi";
+import Image from "next/image";
 
-const Navbar = () => {
+const links = [
+  {
+    name: "home",
+    path: "/",
+  },
+  {
+    name: "about us",
+    path: "/about-us",
+  },
+  // {
+  //   name: "our services",
+  //   path: "/our-services",
+  // },
+  {
+    name: "contact us",
+    path: "/contact-us",
+  },
+];
+
+type Props = {
+  isOpen: boolean;
+  toggleMenu: () => void;
+};
+
+const Nav = ({ isOpen, toggleMenu }: Props) => {
   const pathname = usePathname();
-  return (
-    <div className="w-full h-20 fixed top-0 shadow-lg shadow-[#611d0e]/50 bg-[#42160017] backdrop-blur-md z-50 px-10">
-      <div className="text-white w-full h-full flex items-center justify-between m-auto px-2.5">
-        <a href="/" className="h-auto w-auto flex flex-row items-center">
-          <Image
-            src="/NavLogo.png"
-            alt="logo"
-            width={70}
-            height={70}
-            className="cursor-pointer hover:animate-slowspin"
-          />
-          <span className="handjet font-bold ml-4 text-4xl xl:text-6xl block text-gray-300 uppercase">
-            Bytescrafters
-          </span>
-        </a>
 
-        <div className="hidden xl:flex w-[500px] h-full flex-row items-center justify-between md:mr-20">
-          <div className="flex items-center justify-between w-full h-auto border-gray-300">
-            <a
-              href="/about-us"
-              className={`transition-colors duration-300 cursor-pointer ${
-                pathname === "/about-us"
-                  ? "text-orange-400"
+  return (
+    <>
+      <nav className="hidden md:flex gap-8">
+        {links.map(({ name, path }) => {
+          return (
+            <Link
+              href={path}
+              key={name}
+              className={`transition-colors duration-300 cursor-pointer capitalize hover:text-accent ${
+                pathname === path
+                  ? "text-orange-400 text-accent border-b-2 border-accent"
                   : "text-gray-300 hover:text-orange-400"
               }`}
             >
-              About Us
-            </a>
-            <a
-              href="/services"
-              className={`transition-colors duration-300 cursor-pointer ${
-                pathname === "/services"
-                  ? "text-orange-400"
-                  : "text-gray-300 hover:text-orange-400"
+              {name}
+            </Link>
+          );
+        })}
+      </nav>
+
+      <div
+        className={`${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        } fixed bg-white  w-2/3 h-screen top-0 left-0 z-60 shadow-2xl md:hidden transform transition-transform duration-300`}
+      >
+        <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200">
+          <Link
+            href="/"
+            onClick={() => toggleMenu()}
+            className="flex items-center space-x-2"
+          >
+            <Image
+              src={"/NavLogo.png"}
+              alt="Company Logo"
+              width={100}
+              height={100}
+            />
+          </Link>
+          <button
+            onClick={() => toggleMenu()}
+            className="text-2xl text-gray-700 hover:text-accent transition-colors"
+          >
+            <FiX />
+          </button>
+        </div>
+
+        <div className="flex flex-col px-6 pt-6 space-y-6 text-lg font-medium">
+          {links.map(({ name, path }) => (
+            <Link
+              href={path}
+              key={name}
+              onClick={() => toggleMenu()}
+              className={`capitalize transition-colors duration-200 ${
+                pathname === path
+                  ? "text-accent"
+                  : "text-gray-800 hover:text-accent"
               }`}
             >
-              Our Services
-            </a>
-            <a
-              href="/projects"
-              className={`transition-colors duration-300 cursor-pointer ${
-                pathname === "/projects"
-                  ? "text-orange-400"
-                  : "text-gray-300 hover:text-orange-400"
-              }`}
-            >
-              Our Projects
-            </a>
-            <a
-              href="/contact-us"
-              className={`transition-colors duration-300 cursor-pointer ${
-                pathname === "/contact-us"
-                  ? "text-orange-400"
-                  : "text-gray-300 hover:text-orange-400"
-              }`}
-            >
-              Contact Us
-            </a>
-          </div>
+              {name}
+            </Link>
+          ))}
         </div>
       </div>
-    </div>
+
+      {isOpen && (
+        <div
+          onClick={() => toggleMenu()}
+          className="fixed w-screen h-screen bg-black opacity-40 z-50 top-0 left-0 "
+        />
+      )}
+    </>
   );
 };
 
-export default Navbar;
+export default Nav;

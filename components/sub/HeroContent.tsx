@@ -45,7 +45,7 @@ const HeroContent = () => {
 
         <motion.p
           variants={slideInFromLeft(0.8)}
-          className="text-sm xl:text-2xl text-gray-400 my-5 mr-0 xl:mr-20"
+          className="text-sm xl:text-xl text-gray-400 my-5 mr-0 xl:mr-20"
         >
           We craft modern digital experiences — from websites and apps to
           automations and AI — built with premium quality and a friendly, human

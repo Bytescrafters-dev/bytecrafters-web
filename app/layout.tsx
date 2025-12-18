@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/main/Navbar";
 import Footer from "@/components/main/Footer";
+import Header from "@/components/main/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,7 +26,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} bg-[#040402] overflow-y-scroll overflow-x-hidden`}
       >
-        <Navbar />
+        <Header />
         {children}
         <Footer />
       </body>

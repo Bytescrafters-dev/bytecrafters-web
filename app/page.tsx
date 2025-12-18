@@ -1,5 +1,7 @@
+import Testimonials from "@/components/main/Testimonials";
 import Hero from "@/components/main/Hero";
 import HomeServices from "@/components/main/HomeServices";
+import HowWeWork from "@/components/main/HowWeWork";
 import Intro from "@/components/main/Intro";
 
 export default function Home() {
@@ -10,6 +12,8 @@ export default function Home() {
       </div>
       <Intro />
       <HomeServices />
+      <HowWeWork />
+      {/* <Testimonials /> */}
     </main>
   );
 }

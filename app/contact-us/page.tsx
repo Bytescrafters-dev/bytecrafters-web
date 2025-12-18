@@ -18,26 +18,26 @@ const ContactUs = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    // e.preventDefault();
-    // const response = await fetch("/api/contact", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(form),
-    // });
-    // if (response.ok) {
-    //   alert("Message sent!");
-    //   setForm({
-    //     firstName: "",
-    //     lastName: "",
-    //     email: "",
-    //     contact: "",
-    //     message: "",
-    //   });
-    // } else {
-    //   alert("Something went wrong. Please try again.");
-    // }
+    e.preventDefault();
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    });
+    if (response.ok) {
+      alert("Message sent!");
+      setForm({
+        firstName: "",
+        lastName: "",
+        email: "",
+        contact: "",
+        message: "",
+      });
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -110,7 +110,7 @@ const ContactUs = () => {
         </h2>
         <div className="w-full h-72 rounded-lg overflow-hidden shadow-md">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d186905.63524146916!2d-81.413426471968!3d42.948762790439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882ef20ea88d9b0b%3A0x28c7d7699a056b95!2sLondon%2C%20ON%2C%20Canada!5e0!3m2!1sen!2sau!4v1757247287028!5m2!1sen!2sau"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6300.966056076773!2d145.1255455!3d-37.84898690000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad64062a73786ad%3A0xf50b3d1d6531f9ed!2s26%20Muyan%20Cct%2C%20Burwood%20VIC%203125!5e0!3m2!1sen!2sau!4v1764415256803!5m2!1sen!2sau"
             width="100%"
             height="100%"
             style={{ border: 0 }}
