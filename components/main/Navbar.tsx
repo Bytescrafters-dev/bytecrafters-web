@@ -55,9 +55,9 @@ const Nav = ({ isOpen, toggleMenu }: Props) => {
       <div
         className={`${
           isOpen ? "translate-x-0" : "-translate-x-full"
-        } fixed bg-white  w-2/3 h-screen top-0 left-0 z-60 shadow-2xl md:hidden transform transition-transform duration-300`}
+        } fixed bg-[#000000c3]  w-2/3 h-screen top-0 left-0 z-60 shadow-2xl md:hidden transform transition-transform duration-300`}
       >
-        <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200">
+        <div className="flex items-center justify-between px-4 py-3 border-b border-gray-600">
           <Link
             href="/"
             onClick={() => toggleMenu()}
@@ -72,7 +72,7 @@ const Nav = ({ isOpen, toggleMenu }: Props) => {
           </Link>
           <button
             onClick={() => toggleMenu()}
-            className="text-2xl text-gray-700 hover:text-accent transition-colors"
+            className="text-2xl text-gray-300 hover:text-accent transition-colors"
           >
             <FiX />
           </button>
@@ -86,8 +86,8 @@ const Nav = ({ isOpen, toggleMenu }: Props) => {
               onClick={() => toggleMenu()}
               className={`capitalize transition-colors duration-200 ${
                 pathname === path
-                  ? "text-accent"
-                  : "text-gray-800 hover:text-accent"
+                  ? "text-orange-400"
+                  : "text-gray-300 hover:text-orange-400"
               }`}
             >
               {name}
